@@ -27,7 +27,7 @@ Both WEKA and mothur are distributed under the GNU licence.
 IPED require a special quality file as an input, this can ONLY be generated via our adapted version of make.contigs (included with IPED executable). Thus, you need to assemble the MiSeq paired-end files [as described below under "Step 1: Creating contigs"] then, you can process your data as you wish. IPED can perfectly replace "pre.cluster" command in Mothur MiSeq pipeline http://www.mothur.org/wiki/MiSeq_SOP, keeping in mind IPED require a pre-aligned MSA fasta file, that can be created via mothur "align.seqs" command. If you are using other pipelines for processing your data, such as QIIME or USEARCH, please contact the authors to provide you with additional guideline (scripts) for modifying your input into IPED/mothur format.
  
 
-<IPED can be run following two different approaches>:
+IPED can be run following two different approaches:
 i) In two consecutive commands: first running the IPED version of make.contigs, and secondly run the denoising (IPED) step.
 ii) In one single command, combining the IPED adapted make.contigs command and the denoising (IPED) step.
 
@@ -36,41 +36,45 @@ The description below follows the first approach, but an example of how the comm
 Step 1: Creating contigs
 
 Mandatory Options:
-_F Forward fastq
-_R Reverse fastq
-_o Output Path.
+
+        _F Forward fastq
+        _R Reverse fastq
+        _o Output Path.
 Non mandatory Options
-_D Deltaq default =6 (check mothur documentation for more info)
-_I Insert default = 20 (check mothur documentation for more info)
+
+        _D Deltaq default =6 (check mothur documentation for more info)
+        _I Insert default = 20 (check mothur documentation for more info)
 Example command: ./IPED.run _F ./sample.forward.fastq _R ./sample.reverse.fastq _o OUTPUT_PATH
 
 Step 2: Denoising (IPED)
 
 Mandatory Options:
-_n Name file with the redundancy
-Tab separated file with the read ID on the first column and the IDs of identical reads on the second column [separated by comma]).
-Can be produced after Dereplication of the reads via the mothur command [unique.seqs(fasta = file.fasta)]
 
-_f Aligned sequences file
-Aligned multi-fasta files without any ambiguity, only "AGTC" bases (can be created using the align.seqs and filter.seqs commands in mothur).
-
-_o Output Path              
-_c Contigs fasta file
-Fasta file created in the first step (make.contigs).
-
-_q Qual file of contigs
-Quality file created in the first step (make.contigs)
+        _n Name file with the redundancy
+                Tab separated file with the read ID on the first column and the IDs of identical reads on the second column [come separated].
+               Can be produced after Dereplication of the reads via the mothur command [unique.seqs(fasta = file.fasta)]
+        _f Aligned sequences file
+                Aligned multi-fasta files without any ambiguity, only "AGTC" bases
+                Can be created using the align.seqs and filter.seqs commands in mothur.
+        _o Output Path              
+        _c Contigs fasta file
+                Fasta file created in the first step (make.contigs).
+        _q Qual file of contigs
+                Quality file created in the first step (make.contigs)
 
 Non mandatory Options
-_p number of processors, [default 1]
-_g group file (in case of having different sample-groups)
- Tab separated file, with read ID in the first column and read sample (group) name on the second, as produced by mothur.
-
-_d differences tolerated
-[Default: will be automatically calculated with a cut-off leading to clustering of reads with 98% similarity. For example, a length of 400 bp will results in a default difference cutoff of 4 (it is recommended to increase the differences by "1" each additional 100 bp in the read average length i.e. 98% similarity). Check mothur for more information.
-
-_i log ID
-fill in to continue a previous run. If left empty, a new run will be created with a random number (default: random number)
+        _p number of processors, [default 1]
+        _g group file (in case of having different sample-groups)
+                Tab separated file, with read ID in the first column and read sample  name on the second, as produced by mothur.
+        
+        _d differences tolerated
+                [Default: will be automatically calculated with a cut-off leading to clustering of reads with 98% similarity].
+                For example, a length of 400 bp will results in a default difference cutoff of 4 
+                It is recommended to increase the differences by "1" each additional 100 bp in the read average length.
+                Check mothur for more information.
+        
+        _i log ID       
+                Fill in to continue a previous run. If left empty, a new run will be created with a random number (default: random number)
 Example command: ./IPED.run _f ./sample.fasta _n ./sample.names _c /your/complete/path/sample.trim.contigs.fasta _q /your/complete/path/sample.contigs.qual _o OUTPUT_PATH
 To see the program help, type IPED.run (with no parameters).
 
