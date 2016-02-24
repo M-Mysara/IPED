@@ -18,7 +18,7 @@ Both WEKA and mothur are distributed under the GNU licence.
 # Syntax:
 !!! Make sure you use an underscore "_" (and not a hyphen "-") to specify the option you want to set.
 
-!!! Make sure to use the complete PATH when describing files (i.e. "/YOUR/COMPLATE/PATH/" instead of "./" )
+!!! Make sure to use the complete PATH when describing files (i.e. "/YOUR/COMPLETE/PATH/" instead of "./" )
 
 !!! When running IPED the first time on your sample, you are obliged to first run the IPED version of make.contigs in order to produce an IPED adapted quality file together with the default assembled fasta file. This fasta file should be aligned to a reference dataset, before running IPED denoising [IPED can perfectly replace pre.cluster command in Mothur MiSeq pipeline (http://www.mothur.org/wiki/MiSeq_SOP).  
 
