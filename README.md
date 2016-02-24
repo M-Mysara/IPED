@@ -26,9 +26,8 @@ Both WEKA and mothur are distributed under the GNU licence.
     
 IPED require a special quality file as an input, this can ONLY be generated via our adapted version of make.contigs (included with IPED executable). Thus, you need to assemble the MiSeq paired-end files [as described below under "Step 1: Creating contigs"] then, you can process your data as you wish. IPED can perfectly replace "pre.cluster" command in Mothur MiSeq pipeline http://www.mothur.org/wiki/MiSeq_SOP, keeping in mind IPED require a pre-aligned MSA fasta file, that can be created via mothur "align.seqs" command. If you are using other pipelines for processing your data, such as QIIME or USEARCH, please contact the authors to provide you with additional guideline (scripts) for modifying your input into IPED/mothur format.
  
-_When running IPED the first time on your sample, you are obliged to first run the IPED version of make.contigs in order to produce an IPED adapted quality file together with the default assembled fasta file. This fasta file should be aligned to a reference dataset, before running IPED denoising step [IPED can perfectly replace pre.cluster command in Mothur MiSeq pipeline http://www.mothur.org/wiki/MiSeq_SOP].  
 
-IPED can be run following two different approaches:
+<IPED can be run following two different approaches>:
 i) In two consecutive commands: first running the IPED version of make.contigs, and secondly run the denoising (IPED) step.
 ii) In one single command, combining the IPED adapted make.contigs command and the denoising (IPED) step.
 
