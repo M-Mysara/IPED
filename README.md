@@ -2,7 +2,7 @@
 A highly efficient denoising tool for Illumina paired-end 16S rRNA amplicon sequencing data.
 The development of high-throughput sequencing technologies has revolutionized the field of 16S RNA amplicon sequencing approaches, aimed at assessing microbial diversity. An important step in preprocessing these amplicon sequencing data is the removal of sequencing errors, often referred to as denoising. However most implementations are primarily focused on denoising 454 pyrosequencing data. We have developed a dedicated algorithm (IPED) for correcting sequencing errors in paired-end reads obtained from the Illumina MiSeq platform. The machine learning method developed in this work is able to predict positions in the sequencing reads potentially containing errors. Subsequently this information is used to group those error-prone reads with correct reads resulting in error-free consensus reads by masking potentially erroneous positions during this clustering. Benchmarking our algorithm on real-life mock data showed an average improvement of 50% compared with the second best algorithm, and for amplicons where paired read are not completely overlapping almost an order of magnitude reduction of the error rate has been observed. Reducing the error rate had a positive effect on the clustering of reads in operational taxonomic units, with an almost perfect correlation between the number of clusters and the number of species present in the mock communities. The IPED software can be downloaded from the release section here (https://github.com/M-Mysara/IPED/releases) or via the following alternative links: 
 
-    unix version: http://science.sckcen.be/~/media/Files/Science/EHS/Bioinformatics_expertise/IPED/IPED_unix.zip?la=en
+    Unix version: http://science.sckcen.be/~/media/Files/Science/EHS/Bioinformatics_expertise/IPED/IPED_unix.zip?la=en
     Mac version: http://science.sckcen.be/~/media/Files/Science/EHS/Bioinformatics_expertise/IPED/IPED_mac.zip?la=en.
 # Installation Requirement
 Both Perl and Java needed to be installed to run IPED. All other software packages that are required to run IPED are included in the downloaded file (IPED_V?.run). In case you are interested in the source code of IPED, this is also included in the downloaded file. Only in case you want to run the source code, you will need to install those software components separately, and adapt the source code referring to those software components accordingly. In all other cases, we encourage the end-user to use the IPED_V?.run executable.
@@ -10,13 +10,13 @@ Both Perl and Java needed to be installed to run IPED. All other software packag
 # Included Software
 Software listed below is used by the IPED algorithm. However you do NOT need to install it separately as these software modules are included in the IPED software.
 
-Mothur v.1.33.3:
- Available at http://www.mothur.org/wiki/Download_mothur. 
- Note about changes made in the mothur package integrated in this package:
- The command called "pre.cluster" is modified to be compatible with the IPED algorithm.
- The command called "make.contigs" is modified to produce an additional IPED-formatted quality file.
-WEKA 3.7.11: 
- Available online at http://www.cs.waikato.ac.nz/ml/weka/.
+    Mothur v.1.33.3:
+         Available at http://www.mothur.org/wiki/Download_mothur. 
+         Note about changes made in the mothur package integrated in this package:
+         The command called "pre.cluster" is modified to be compatible with the IPED algorithm.
+         The command called "make.contigs" is modified to produce an additional IPED-formatted quality file.
+    WEKA 3.7.11: 
+         Available online at http://www.cs.waikato.ac.nz/ml/weka/.
 Both WEKA and mothur are distributed under the GNU licence.
 # Syntax:
 !!! Make sure you use an underscore "_" (and not a hyphen "-") to specify the option you want to set.
