@@ -63,6 +63,7 @@ Mandatory Options:
                 Quality file created in the first step (make.contigs)
 
 Non mandatory Options
+
         _p number of processors, [default 1]
         _g group file (in case of having different sample-groups)
                 Tab separated file, with read ID in the first column and read sample  name on the second, as produced by mothur.
@@ -83,25 +84,27 @@ The IPED program generates different text output files distributed over two fold
 Inside each of them another folder can be found, having as name in both folders the same random number (i.e. the process ID)
 
 IPED_Final:
-Contains the final alignment and name file after denoising and preclustering named:
 
-  Results.IPED.names
-  Results.IPED.fasta
-  In case of using _F & _R options:
-    Forward_raw_fastq_name.trim.contig.fasta
-    Forward_raw_fastq_name.contig.qual
-IPED_Temp
-Split-up alignment files 
-  (0.fasta, 1.fasta ,etc) and name files (0.names ,1.names, etc) according to the number of processors used.
-IPED model (classifier) input and output named 0.Test.arff, 0.Test.Final, etc respectively.
-Split-up alignment files with the marked (i.e. potentially erroneous) positions (0.Results, 1.Results, etc).
-Merged aligment file (Results.fasta) and names (Results.names)
-output from modified Pre-cluster algorithm: Results.precluster.fasta, Result.precluster.names
-Final output after converting the masked positions back to their original nucleotide (Results.precluster.pick.fasta, Results.precluster.pick.names)
-logfile
-The program produces a log file of the steps being run, making it possible to monitor the different steps, and track down possible errors:
-IPED: OUTPUT_PATH/IPED_Temp/****/IPED_****.logfile 
-(**** represents a random process ID).
+    Contains the final alignment and name file after denoising and preclustering named:
+        Results.IPED.names
+        Results.IPED.fasta
+    In case of using _F & _R options:
+        Forward_raw_fastq_name.trim.contig.fasta
+        Forward_raw_fastq_name.contig.qual
+        
+IPED_Temp:
+
+    Split-up alignment files (0.fasta, 1.fasta ,etc) according to the number of processors used.
+    Split-up name files (0.names ,1.names, etc) according to the number of processors used.
+    IPED model (classifier) input and output named 0.Test.arff, 0.Test.Final, etc respectively.
+    Split-up alignment files with the marked (i.e. potentially erroneous) positions (0.Results, 1.Results, etc).
+    Merged aligment file (Results.fasta) and names (Results.names)
+    output from modified Pre-cluster algorithm: Results.precluster.fasta, Result.precluster.names
+    Final output after converting the masked positions back to their original nucleotide (Results.precluster.pick.fasta, Results.precluster.pick.names)
+    logfile
+        The program produces a log file of the steps being run, making it possible to monitor the different steps, and trackdown possible errors:
+    IPED: OUTPUT_PATH/IPED_Temp/****/IPED_****.logfile 
+    (**** represents a random process ID).
 
 # Testing
 Type:
