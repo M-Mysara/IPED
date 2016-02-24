@@ -44,7 +44,7 @@ Non mandatory Options
 
         _D Deltaq default =6 (check mothur documentation for more info)
         _I Insert default = 20 (check mothur documentation for more info)
-Example command: ./IPED.run _F ./sample.forward.fastq _R ./sample.reverse.fastq _o OUTPUT_PATH
+Example command: ./IPED_V?.run _F ./sample.forward.fastq _R ./sample.reverse.fastq _o OUTPUT_PATH
 
 Step 2: Denoising (IPED)
 
@@ -76,7 +76,7 @@ Non mandatory Options
         
         _i log ID       
                 Fill in to continue a previous run. If left empty, a new run will be created with a random number (default: random number)
-Example command: ./IPED.run _f ./sample.fasta _n ./sample.names _c /your/complete/path/sample.trim.contigs.fasta _q /your/complete/path/sample.contigs.qual _o OUTPUT_PATH
+Example command: ./IPED_V?.run _f ./sample.fasta _n ./sample.names _c /your/complete/path/sample.trim.contigs.fasta _q /your/complete/path/sample.contigs.qual _o OUTPUT_PATH
 To see the program help, type IPED.run (with no parameters).
 
 # Output Files
@@ -108,7 +108,7 @@ IPED_Temp:
 # Testing
 Type:
 
-    IPED.run _f /PATH/sample.fasta _n /PATH/sample.names _F /PATH/sample.forward.fastq _R /PATH/sample.reverse.fastq _o /OUTPUT_PATH
+    IPED_V?.run _f /PATH/sample.fasta _n /PATH/sample.names _F /PATH/sample.forward.fastq _R /PATH/sample.reverse.fastq _o /OUTPUT_PATH
 
 This will produce within the output path a file containing the results i.e. two files named Sample.IPED.fasta and Sample.IPED.names. The command given above integrates the two steps (running make.contigs and running IPED) in one command. In case you want to re-analyze a sample, and contigs have already been created for that sample, you can omit the make.contig step and input directly in the command line the contig-file and the IPED adapted quality file.
 
