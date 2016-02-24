@@ -94,29 +94,30 @@ IPED_Final:
         
 IPED_Temp:
 
-    Split-up alignment files (0.fasta, 1.fasta ,etc) according to the number of processors used.
-    Split-up name files (0.names ,1.names, etc) according to the number of processors used.
-    IPED model (classifier) input and output named 0.Test.arff, 0.Test.Final, etc respectively.
-    Split-up alignment files with the marked (i.e. potentially erroneous) positions (0.Results, 1.Results, etc).
-    Merged aligment file (Results.fasta) and names (Results.names)
-    output from modified Pre-cluster algorithm: Results.precluster.fasta, Result.precluster.names
-    Final output after converting the masked positions back to their original nucleotide (Results.precluster.pick.fasta, Results.precluster.pick.names)
-    logfile
+    -Split-up alignment files (0.fasta, 1.fasta ,etc) according to the number of processors used.
+    -Split-up name files (0.names ,1.names, etc) according to the number of processors used.
+    -IPED model (classifier) input and output named 0.Test.arff, 0.Test.Final, etc respectively.
+    -Split-up alignment files with the marked (i.e. potentially erroneous) positions (0.Results, 1.Results, etc).
+    -Merged aligment file (Results.fasta) and names (Results.names)
+    -Output from modified Pre-cluster algorithm: Results.precluster.fasta, Result.precluster.names
+    -Final output after converting the masked positions back to their original nucleotide (Results.precluster.pick.fasta, Results.precluster.pick.names)
+    -logfile
         The program produces a log file of the steps being run, making it possible to monitor the different steps, and trackdown possible errors:
-    IPED: OUTPUT_PATH/IPED_Temp/****/IPED_****.logfile 
-    (**** represents a random process ID).
+        IPED: OUTPUT_PATH/IPED_Temp/****/IPED_****.logfile (**** represents a random process ID).
 
 # Testing
 Type:
 
-IPED.run _f ./sample.fasta _n ./sample.names _F ./sample.forward.fastq _R ./sample.reverse.fastq _o OUTPUT_PATH
-The different input file (sample.fasta, sample.names, sample.forward.fastq, sample.reverse.fastq) are included in the software. It will produce in the output path a file containing the results i.e. two files named Sample.IPED.fasta and Sample.IPED.names. The command given above integrates the two steps (running make.contigs and running IPED) in one command. In case you want to re-analyze a sample, and contigs have already been created for that sample, you can omit the make.contig step and input directly in the command line the contig-file and the IPED adapted quality file. The Test dataset is a part of the data published in Kozich et al. (2013)  and downloaded from http://www.mothur.org/MiSeqDevelopmentData.html.
+    IPED.run _f /PATH/sample.fasta _n /PATH/sample.names _F /PATH/sample.forward.fastq _R /PATH/sample.reverse.fastq _o /OUTPUT_PATH
+
+This will produce within the output path a file containing the results i.e. two files named Sample.IPED.fasta and Sample.IPED.names. The command given above integrates the two steps (running make.contigs and running IPED) in one command. In case you want to re-analyze a sample, and contigs have already been created for that sample, you can omit the make.contig step and input directly in the command line the contig-file and the IPED adapted quality file.
+
 # Citing:
 If you are going to use IPED, please cite it with the included software (mothur, WEKA):
 
-M.Mysara, J. Raes, N.Leys, P.Monsieurs (2016) IPED: A Highly Efficient Denoising Tool for Illumina MiSeq Paired-end 16S rRNA Amplicon Sequencing Data.
-Schloss PD, Westcott SL, Ryabin T, Hall JR, Hartmann M, Hollister EB, et al. (2009). Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities. Applied and environmental microbiology 75:7537–41.
-Hall M, National H, Frank E, Holmes G, Pfahringer B, Reutemann P, et al. (2009). The WEKA Data Mining Software?: An Update. SIGKDD Explorations 11:10–18.
+    M.Mysara, J. Raes, N.Leys, P.Monsieurs (2016) IPED: A Highly Efficient Denoising Tool for Illumina MiSeq Paired-end 16S rRNA Amplicon Sequencing Data.
+    Schloss PD, Westcott SL, Ryabin T, Hall JR, Hartmann M, Hollister EB, et al. (2009). Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities. Applied and environmental microbiology 75:7537–41.
+    Hall M, National H, Frank E, Holmes G, Pfahringer B, Reutemann P, et al. (2009). The WEKA Data Mining Software?: An Update. SIGKDD Explorations 11:10–18.
 Contact:
 For questions, bugs and suggestions, please refer to mohamed.mysara@gmail.com & pieter.monsieurs@sckcen.be
 Developed by M.Mysara et al. 2016
