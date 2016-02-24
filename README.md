@@ -20,7 +20,7 @@ Both WEKA and mothur are distributed under the GNU licence.
 
 !!! Make sure to use the complete PATH when describing files (i.e. "/YOUR/COMPLETE/PATH/" instead of "./" )
 
-!!! When running IPED the first time on your sample, you are obliged to first run the IPED version of make.contigs in order to produce an IPED adapted quality file together with the default assembled fasta file. This fasta file should be aligned to a reference dataset, before running IPED denoising [IPED can perfectly replace pre.cluster command in Mothur MiSeq pipeline (http://www.mothur.org/wiki/MiSeq_SOP).  
+!!! When running IPED the first time on your sample, you are obliged to first run the IPED version of make.contigs in order to produce an IPED adapted quality file together with the default assembled fasta file. This fasta file should be aligned to a reference dataset, before running IPED denoising step [IPED can perfectly replace pre.cluster command in Mothur MiSeq pipeline http://www.mothur.org/wiki/MiSeq_SOP].  
 
 IPED can be run following two different approaches:
 i) In two consecutive commands: first running the IPED version of make.contigs, and secondly run the denoising (IPED) step.
@@ -102,9 +102,9 @@ The different input file (sample.fasta, sample.names, sample.forward.fastq, samp
 # Citing:
 If you are going to use IPED, please cite it with the included software (mothur, WEKA):
 
-M.Mysara, J. Raes, N.Leys, P.Monsieurs (2014) IPED: A highly efficient denoising tool for Illumina paired-end 16S rRNA amplicon sequencing data.
+M.Mysara, J. Raes, N.Leys, P.Monsieurs (2016) IPED: A Highly Efficient Denoising Tool for Illumina MiSeq Paired-end 16S rRNA Amplicon Sequencing Data.
 Schloss PD, Westcott SL, Ryabin T, Hall JR, Hartmann M, Hollister EB, et al. (2009). Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities. Applied and environmental microbiology 75:7537–41.
 Hall M, National H, Frank E, Holmes G, Pfahringer B, Reutemann P, et al. (2009). The WEKA Data Mining Software?: An Update. SIGKDD Explorations 11:10–18.
 Contact:
-For questions, bugs and suggestions, please refer to mohamed.mysara@sckcen.be & pieter.monsieurs@sckcen.be
-Developed by M.Mysara et al. 2014
+For questions, bugs and suggestions, please refer to mohamed.mysara@gmail.com & pieter.monsieurs@sckcen.be
+Developed by M.Mysara et al. 2016
