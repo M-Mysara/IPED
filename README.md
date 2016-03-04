@@ -27,12 +27,6 @@ Both WEKA and mothur are distributed under the GNU licence.
 IPED require a special quality file as an input, this can ONLY be generated via our adapted version of make.contigs (included with IPED executable). Thus, you need to assemble the MiSeq paired-end files [as described below under "Step 1: Creating contigs"] then, you can process your data as you wish. IPED can perfectly replace "pre.cluster" command in Mothur MiSeq pipeline http://www.mothur.org/wiki/MiSeq_SOP, keeping in mind IPED require a pre-aligned MSA fasta file, that can be created via mothur "align.seqs" command. If you are using other pipelines for processing your data, such as QIIME or USEARCH, please contact the authors to provide you with additional guideline (scripts) for modifying your input into IPED/mothur format.
  
 
-IPED can be run following two different approaches:
-i) In two consecutive commands: first running the IPED version of make.contigs, and secondly run the denoising (IPED) step.
-ii) In one single command, combining the IPED adapted make.contigs command and the denoising (IPED) step.
-
-The description below follows the first approach, but an example of how the command line looks like in case of the second approach, is given in the "testing" section.
-
 Step 1: Creating contigs
 
 Mandatory Options:
@@ -108,7 +102,8 @@ IPED_Temp:
 # Testing
 Type:
 
-    IPED_V?.run _f /PATH/sample.fasta _n /PATH/sample.names _F /PATH/sample.forward.fastq _R /PATH/sample.reverse.fastq _o /OUTPUT_PATH
+Step1:    IPED_V?.run _F /PATH/sample.forward.fastq _R /PATH/sample.reverse.fastq _o /OUTPUT_PATH
+Step2:    IPED_V?.run _f /PATH/sample.fasta _n /PATH/sample.names _c /PATH/IPED_Final/sample.forward.trim.contig.fasta _q /PATH/IPED_Final/sample.forward.contig.qual _o /OUTPUT_PATH
 
 This will produce within the output path a file containing the results i.e. two files named Sample.IPED.fasta and Sample.IPED.names. The command given above integrates the two steps (running make.contigs and running IPED) in one command. In case you want to re-analyze a sample, and contigs have already been created for that sample, you can omit the make.contig step and input directly in the command line the contig-file and the IPED adapted quality file.
 
