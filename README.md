@@ -4,6 +4,8 @@ The development of high-throughput sequencing technologies has revolutionized th
 
     Unix version: http://science.sckcen.be/~/media/Files/Science/EHS/Bioinformatics_expertise/IPED/IPED_unix.zip?la=en
     Mac version: http://science.sckcen.be/~/media/Files/Science/EHS/Bioinformatics_expertise/IPED/IPED_mac.zip?la=en.
+# Tutorial Video:
+    You can download a tutorial video illustrating running IPED using the supplied test dataset from this link:
 # Installation Requirement
 Both Perl and Java needed to be installed to run IPED. All other software packages that are required to run IPED are included in the downloaded file (IPED_V?.run). In case you are interested in the source code of IPED, this is also included in the downloaded file. Only in case you want to run the source code, you will need to install those software components separately, and adapt the source code referring to those software components accordingly. In all other cases, we encourage the end-user to use the IPED_V?.run executable.
 
