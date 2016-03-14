@@ -43,7 +43,7 @@ Non mandatory Options
 
         _D Deltaq default =6 (check mothur documentation for more info)
         _I Insert default = 20 (check mothur documentation for more info)
-Example command: ./IPED_V?.run _F ./sample.forward.fastq _R ./sample.reverse.fastq _o OUTPUT_PATH
+Example command: ./IPED_V?.run _F /PATH/sample.forward.fastq _R /PATH/sample.reverse.fastq _o OUTPUT_PATH
 
 Step 2: Denoising (IPED)
 
@@ -75,7 +75,7 @@ Non mandatory Options
         
         _i log ID       
                 Fill in to continue a previous run. If left empty, a new run will be created with a random number (default: random number)
-Example command: ./IPED_V?.run _f ./sample.fasta _n ./sample.names _c /your/complete/path/sample.trim.contigs.fasta _q /your/complete/path/sample.contigs.qual _o OUTPUT_PATH
+Example command: ./IPED_V?.run _f /PATH/sample.fasta _n /PATH/sample.names _c /PATH/sample.trim.contigs.fasta _q /PATH/sample.contigs.qual _o OUTPUT_PATH
 To see the program help, type IPED.run (with no parameters).
 
 # Output Files
