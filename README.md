@@ -1,5 +1,6 @@
 # IPED
 A highly efficient denoising tool for Illumina paired-end 16S rRNA amplicon sequencing data.
+## Mysara, M. et al., 2016. IPED: a highly efficient denoising tool for Illumina MiSeq Paired-end 16S rRNA gene amplicon sequencing data. BMC Bioinformatics, 17(1), p.192.
 The development of high-throughput sequencing technologies has revolutionized the field of 16S RNA amplicon sequencing approaches, aimed at assessing microbial diversity. An important step in preprocessing these amplicon sequencing data is the removal of sequencing errors, often referred to as denoising. However most implementations are primarily focused on denoising 454 pyrosequencing data. We have developed a dedicated algorithm (IPED) for correcting sequencing errors in paired-end reads obtained from the Illumina MiSeq platform. The machine learning method developed in this work is able to predict positions in the sequencing reads potentially containing errors. Subsequently this information is used to group those error-prone reads with correct reads resulting in error-free consensus reads by masking potentially erroneous positions during this clustering. Benchmarking our algorithm on real-life mock data showed an average improvement of 50% compared with the second best algorithm, and for amplicons where paired read are not completely overlapping almost an order of magnitude reduction of the error rate has been observed. Reducing the error rate had a positive effect on the clustering of reads in operational taxonomic units, with an almost perfect correlation between the number of clusters and the number of species present in the mock communities. The IPED software can be downloaded from the release section here (https://github.com/M-Mysara/IPED/releases) or via the following alternative links: 
 
     Unix version: http://science.sckcen.be/~/media/Files/Science/EHS/Bioinformatics_expertise/IPED/IPED_unix.zip?la=en
@@ -115,7 +116,7 @@ This will produce within the output path a file containing the results i.e. two 
 # Citing:
 If you are going to use IPED, please cite it with the included software (mothur, WEKA):
 
-    M.Mysara, J. Raes, N.Leys, P.Monsieurs (2016) IPED: A Highly Efficient Denoising Tool for Illumina MiSeq Paired-end 16S rRNA Amplicon Sequencing Data.
+    Mysara, M. et al., 2016. IPED: a highly efficient denoising tool for Illumina MiSeq Paired-end 16S rRNA gene amplicon sequencing data. BMC Bioinformatics, 17(1), p.192.
     Schloss PD, Westcott SL, Ryabin T, Hall JR, Hartmann M, Hollister EB, et al. (2009). Introducing mothur: open-source, platform-independent, community-supported software for describing and comparing microbial communities. Applied and environmental microbiology 75:7537–41.
     Hall M, National H, Frank E, Holmes G, Pfahringer B, Reutemann P, et al. (2009). The WEKA Data Mining Software?: An Update. SIGKDD Explorations 11:10–18.
 Contact:
